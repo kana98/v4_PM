@@ -1,0 +1,185 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.5.dtd" >
+   <PATCH nodename="C:\Users\KanaOwada\Desktop\卒業研究\7月14日\GetCamera2.v4p" scrollx="1035" scrolly="120" systemname="GetCamera2" filename="C:\Users\KanaOwada\Desktop\卒業研究\7月14日\GetCamera2.v4p">
+   <BOUNDS type="Window" left="-11040" top="12855" width="7710" height="5715">
+   </BOUNDS>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="1035" top="3675" width="1200" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="VideoIn (DShow9)" nodename="VideoIn (DShow9)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="2310" top="2640" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   <PIN pinname="Video Format" slicecount="1" visible="1" values="MJPG">
+   </PIN>
+   <PIN pinname="Property Page" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Driver" visible="1">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="VideoTexture (EX9.Texture VMR9)" nodename="VideoTexture (EX9.Texture VMR9)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="2310" top="3090" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Video" dstnodeid="10" dstpinname="Video">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Texture Out" dstnodeid="7" dstpinname="Texture">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2310" top="1305" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2310" top="1305" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Enabled">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="13" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2970" top="1305" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2970" top="1305" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Property Page|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Property Page">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="14" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="5715" top="1275" width="1020" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5715" top="1275" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="MJPG">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Video Format|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Output Enum" dstnodeid="9" dstpinname="Video Format">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="15" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="6855" top="1275" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6855" top="1275" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|Logicool HD Pro Webcam C920|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Driver">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Output Enum" dstnodeid="9" dstpinname="Driver">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="16" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1020" top="4275" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1020" top="4275" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Layer" dstnodeid="16" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="17" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1215" top="1515" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1215" top="1515" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Transform">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Output Node" dstnodeid="7" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="18" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="225" top="285" width="915" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="285" width="2625" height="600">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="GetCamera2">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="20">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19">
+   <BOUNDS type="Box" left="4035" top="1290" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4035" top="1290" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="320">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Width">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Width">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20">
+   <BOUNDS type="Box" left="4875" top="1290" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4875" top="1290" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="240">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Height">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Height">
+   </LINK>
+   </PATCH>

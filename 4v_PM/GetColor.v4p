@@ -1,0 +1,159 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.5.dtd" >
+   <PATCH nodename="C:\Users\KanaOwada\Desktop\卒業研究\8月14日_クロマキー\GetColor.v4p" systemname="GetColor" filename="C:\Users\t-fujiwara\Desktop\11.16卒研\リメイク\GetColor.v4p">
+   <BOUNDS type="Window" left="8640" top="5520" width="4305" height="5055">
+   </BOUNDS>
+   <NODE id="8" systemname="Pipet (EX9.Texture)" nodename="Pipet (EX9.Texture)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="450" top="2280" width="2235" height="270">
+   </BOUNDS>
+   <PIN pinname="X" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Color" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Y" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" pintype="Input" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" pintype="Input" values="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Device" pintype="Configuration" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="7" systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="900" top="1785" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" pintype="Input" slicecount="1" values="-0.78343949044586">
+   </PIN>
+   <PIN pinname="Output" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" pintype="Input" visible="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Source Maximum" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Destination Minimum" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Destination Maximum" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Mapping" pintype="Input" visible="1" slicecount="1" values="Float">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="5" systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="1920" top="1785" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Output" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" pintype="Input" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" pintype="Input" visible="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Destination Minimum" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Destination Maximum" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Mapping" pintype="Input" visible="1" slicecount="1" values="Float">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <NODE id="2" nodename="IOBox (Node)" componentmode="InABox" systemname="IOBox (Node)" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Box" left="435" top="555" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="435" top="555" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" pintype="Input" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" pintype="Configuration" values="Texture">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="0" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Pin Visibility" pintype="Configuration" slicecount="1" values="True">
+   </PIN>
+   <PIN pinname="SliceCount Mode" pintype="Configuration" slicecount="1" values="Input">
+   </PIN>
+   <PIN pinname="Columns" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Rows" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Pages" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show SliceIndex" pintype="Configuration" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Font" pintype="Configuration" slicecount="1" values="|Lucida Sans Unicode|">
+   </PIN>
+   <PIN pinname="Size" pintype="Configuration" slicecount="1" values="7">
+   </PIN>
+   <PIN pinname="Show Grid" pintype="Configuration" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="SliceOffset" pintype="Input" visible="-1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Bin Size" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output Node" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="Changed" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="8" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="8" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="8" dstpinname="X">
+   </LINK>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="9" systemname="IOBox (Color)">
+   <BOUNDS type="Box" left="435" top="2850" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="435" top="2850" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Chooser Style" slicecount="1" values="RGBASlider">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Color">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Color" dstnodeid="9" dstpinname="Color Input">
+   </LINK>
+   <NODE systemname="Mouse (Devices Window)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Mouse (Devices Window)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="1995" top="555" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Left Button" visible="1">
+   </PIN>
+   <PIN pinname="PositionXY" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1995" top="555">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Left Button" dstnodeid="8" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="Vector (2d Split)" nodename="Vector (2d Split)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="885" top="1245" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="PositionXY" dstnodeid="11" dstpinname="XY">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="X" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Y" dstnodeid="5" dstpinname="Input">
+   </LINK>
+   </PATCH>

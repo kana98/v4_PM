@@ -1,33 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.5.dtd" >
-   <PATCH nodename="C:\Users\KanaOwada\Desktop\卒業研究\8月14日_クロマキー\Texture.v4p" scrollx="0" scrolly="-360" systemname="Texture" filename="C:\Users\KanaOwada\Desktop\卒業研究\8月14日_クロマキー\Texture.v4p">
-   <BOUNDS type="Window" left="6135" top="6240" width="13500" height="12030">
+   <PATCH nodename="C:\Users\KanaOwada\Documents\4v_PM\Texture.v4p" scrollx="0" scrolly="-360" systemname="Texture" filename="C:\Users\KanaOwada\Desktop\卒業研究\8月14日_クロマキー\Texture.v4p">
+   <BOUNDS type="Window" left="8235" top="6600" width="13500" height="12030">
    </BOUNDS>
-   <NODE id="14" nodename="FILESTREAM (DSHOW9)" systemname="FileStream (DShow9)">
-   <BOUNDS height="0" left="1560" top="7110" type="Node" width="0">
-   </BOUNDS>
-   <PIN pinname="Video" visible="1">
-   </PIN>
-   <PIN pinname="Filename" visible="1">
-   </PIN>
-   <PIN pinname="Play" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Do Seek" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Loop" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Loop End Time" slicecount="1" values="200">
-   </PIN>
-   <PIN pinname="Seek Time" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Loop Start Time" slicecount="1" values="1">
-   </PIN>
-   </NODE>
    <NODE id="11" nodename="VIDEOTEXTURE (EX9.TEXTURE VMR9)" systemname="VideoTexture (EX9.Texture VMR9)">
    <BOUNDS height="0" left="1935" top="7755" type="Node" width="0">
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Video" visible="1">
+   <PIN pinname="Video" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Wait for every Nth frame" visible="1" slicecount="1" values="2">
    </PIN>
@@ -38,12 +18,10 @@
    <PIN pinname="Adapter" slicecount="1" values="-1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="11" dstpinname="Video" srcnodeid="14" srcpinname="Video">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="1560" top="6375" width="480" height="480">
+   <BOUNDS type="Box" left="1020" top="6390" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="1560" top="6375" width="0" height="0">
+   <BOUNDS type="Node" left="1020" top="6390" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -60,8 +38,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Play">
    </PIN>
    </NODE>
-   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="14" dstpinname="Play">
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="7" systemname="IOBox (String)">
    <BOUNDS type="Box" left="2730" top="4980" width="5475" height="315">
    </BOUNDS>
@@ -180,8 +156,6 @@
    </NODE>
    <LINK srcnodeid="0" srcpinname="Output String" dstnodeid="2" dstpinname="Input">
    </LINK>
-   <LINK srcnodeid="7" srcpinname="Output String" dstnodeid="14" dstpinname="Filename">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="18" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1950" top="8640" width="795" height="240">
    </BOUNDS>
@@ -230,4 +204,78 @@
    </LINK>
    <PACK Name="addonpack" Version="35.0.0">
    </PACK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="21">
+   <BOUNDS type="Box" left="2475" top="6150" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2475" top="6150" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="5.5">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Loop Start Time|">
+   </PIN>
+   </NODE>
+   <NODE id="23" nodename="FILESTREAM (DSHOW9)" systemname="FileStream (DShow9)">
+   <BOUNDS height="270" left="1020" top="7125" type="Node" width="2760">
+   </BOUNDS>
+   <PIN pinname="Loop End Time" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Loop" visible="1">
+   </PIN>
+   <PIN pinname="Speed" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Seek Time" slicecount="1" values="0.02">
+   </PIN>
+   <PIN pinname="Video" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Play">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output String" dstnodeid="23" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Loop Start Time">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="24">
+   <BOUNDS type="Box" left="3810" top="6165" width="720" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3810" top="6165" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="350">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Loop End Time|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Loop End Time">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="26">
+   <BOUNDS type="Box" left="1755" top="5940" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1755" top="5940" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Loop">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Video" dstnodeid="11" dstpinname="Video">
+   </LINK>
    </PATCH>
